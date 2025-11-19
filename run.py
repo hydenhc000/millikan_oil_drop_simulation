@@ -1,25 +1,19 @@
 import pygame
 
-from display import create_oil_drop
+from display import create_screen, screen_fill, create_droplet, create_plates
 from physics import initialize_state, apply_forces
 
 def main():
+    
+    # activates the pygame libary 
+
     pygame.init()
 
-    # activates the pygame libary
+    screen = create_screen()
 
-    width, height = 800, 600
-    screen = pygame.display.set_mode((width, height))
-
-    # ^ sets the screen size
-
-    pygame.display.set_caption("Millikan Oil Drop Simulation")
-
-    # ^ window title
+    # turns the simulation on
 
     running = True
-
-    # ^ turns the simulation on
 
     clock = pygame.time.Clock()
 
@@ -35,12 +29,13 @@ def main():
 
             # ^ if the event of closing the window occurs, stop the simulation
 
-        screen.fill((0, 0, 0))
+        screen_fill(screen)
 
         # ^ sets a backround color for window 
 
         apply_forces(state, dt)
-        create_oil_drop(screen, state)
+        create_droplet(screen, state)
+        create_plates(screen)
 
         pygame.display.flip()
 

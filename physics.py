@@ -12,7 +12,7 @@ def initialize_state():
     m: mass of the droplet (kg) from values.py
     """
     return {
-        "y": 100.0,   # start near the top of the window
+        "y": 300.0,   # start near the top of the window
         "v": 0.0,     # initial velocity
         "m": m,       # real mass from values.py (doesn't affect pure gravity yet)
     }
