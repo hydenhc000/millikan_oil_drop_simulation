@@ -29,7 +29,7 @@ def create_droplet(screen, state):
 
     surface = screen
     droplet_color = (240,240, 80)
-    position = (width/2, int(state["y"]))
+    position = (state["x"], state["y"])
     radius = 10
 
     pygame.draw.circle(surface, droplet_color, position, radius)
@@ -46,10 +46,10 @@ def create_plates(screen):
 
     surface = screen
     plate_color = (255, 255, 255)  # pure white
-    top_start_pt = (400, 500)
-    top_end_pt = (750, 500)
-    bottom_start_pt = (400, 100)
-    bottom_end_pt = (750, 100)
+    top_start_pt = (400, 450)
+    top_end_pt = (700, 450)
+    bottom_start_pt = (400, 150)
+    bottom_end_pt = (700, 150)
     thickness = 4
 
     pygame.draw.line(surface, plate_color, top_start_pt, top_end_pt, thickness)
